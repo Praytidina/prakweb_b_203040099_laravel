@@ -34,18 +34,18 @@ Route::get('/about ', function () {
 Route::get('/blog ', function () {
     $blog_posts = [
         [
-            "title" => "Judul Post Pertama",
+            "title" => "Ray Kulon man",
             "slug" => "judul-post-pertama",
             "author" => "Ray Pratidina",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur inventore minus fuga omnis est hic perspiciatis, reiciendis itaque similique tenetur."
-            
+            "body" =>"Seorang anak muda perantau dari ujung jawabarat, datang ke bandung untuk menimba ilmu pengalaman dan untuk meraih cita-cita nya meskipun binguung cita-cita nya ingin menjadi apa.
+            tapi walau bingung dan masih dalam mencari jati diri pemuda ini tidak akan menyerah karena itu lah jalan ninja nya"
         ],
         [
-            "title" => "Judul Post Kedua",
+            "title" => "Farhan the Maxim man",
             "slug" => "judul-post-kedua",
             "author" => "Farhan abas",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quod labore minima ex numquam, expedita commodi modi a qui, debitis iste iusto ut. Tempora repudiandae, modi quaerat libero nihil officia."
-            
+            "body" => "Seorang anak muda dengan julukan Maxim man yang meluanagkan waktu senggang nya dengan menjadi driver Maxim. Berbekal pengalaman mengendarai motor sejauh 1000KM dengan tidak pernah kecelakaan.
+            dia berjuang demi menambah uang saku untuk me modif motor yang lebih proper dan masuk cricle Vario "
         ]
     ]; 
     
@@ -62,18 +62,18 @@ Route::get('/blog ', function () {
 Route::get('posts/{slug}', function($slug) {
     $blog_posts = [
         [
-            "title" => "Judul Post Pertama",
+            "title" => "Ray Kulon man",
             "slug" => "judul-post-pertama",
             "author" => "Ray Pratidina",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur inventore minus fuga omnis est hic perspiciatis, reiciendis itaque similique tenetur."
-            
+            "body" => "Seorang anak muda perantau dari ujung jawabarat, datang ke bandung untuk menimba ilmu pengalaman dan untuk meraih cita-cita nya meskipun binguung cita-cita nya ingin menjadi apa.
+            tapi walau bingung dan masih dalam mencari jati diri pemuda ini tidak akan menyerah karena itu lah jalan ninja nya"
         ],
         [
-            "title" => "Judul Post Kedua",
+            "title" => "Farhan the maxim man",
             "slug" => "judul-post-kedua",
             "author" => "Farhan abas",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quod labore minima ex numquam, expedita commodi modi a qui, debitis iste iusto ut. Tempora repudiandae, modi quaerat libero nihil officia."
-            
+            "body" => "Seorang anak muda dengan julukan Maxim man yang meluanagkan waktu senggang nya dengan menjadi driver Maxim. Berbekal pengalaman mengendarai motor sejauh 1000KM dengan tidak pernah kecelakaan.
+            dia berjuang demi menambah uang saku untuk me modif motor yang lebih proper dan masuk cricle Vario "
         ]
     ]; 
 $new_post= [];
@@ -86,7 +86,7 @@ foreach($blog_posts as $post) {
 
     return view('post', [
         "title" => "single post",
-        "post " => $new_post
+        "post" => $new_post
     ]);
 });
 
