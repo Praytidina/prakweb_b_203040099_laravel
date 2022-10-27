@@ -12,6 +12,9 @@
         </h2>
         <h5>By: {{ $post["author"] }}</h5>
         <P>{{ $post["body"] }} </p>
+        
     @endforeach
+
+    <a class="btn btn-primary btn-m mt-4" href="/">back to Home</a>
 
 @endsection

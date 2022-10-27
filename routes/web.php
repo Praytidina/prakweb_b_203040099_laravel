@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,68 +29,20 @@ Route::get('/about ', function () {
         "title" => "about",
         "name" => "Ray pratidina",
         "email" => "Raypz642@gmail.com.id",
-        "image" => "hapus.jpg"
+        "image" => "senja.jpg"
+        
     ]);
 });
-
-Route::get('/blog ', function () {
-    $blog_posts = [
-        [
-            "title" => "Ray Kulon man",
-            "slug" => "judul-post-pertama",
-            "author" => "Ray Pratidina",
-            "body" =>"Seorang anak muda perantau dari ujung jawabarat, datang ke bandung untuk menimba ilmu pengalaman dan untuk meraih cita-cita nya meskipun binguung cita-cita nya ingin menjadi apa.
-            tapi walau bingung dan masih dalam mencari jati diri pemuda ini tidak akan menyerah karena itu lah jalan ninja nya"
-        ],
-        [
-            "title" => "Farhan the Maxim man",
-            "slug" => "judul-post-kedua",
-            "author" => "Farhan abas",
-            "body" => "Seorang anak muda dengan julukan Maxim man yang meluanagkan waktu senggang nya dengan menjadi driver Maxim. Berbekal pengalaman mengendarai motor sejauh 1000KM dengan tidak pernah kecelakaan.
-            dia berjuang demi menambah uang saku untuk me modif motor yang lebih proper dan masuk cricle Vario "
-        ]
-    ]; 
     
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => $blog_posts
+Route::get(' /posts', [PostController::class, 'index']);
 
-    ]);
-});
 
 
 ///singlepost
 
-Route::get('posts/{slug}', function($slug) {
-    $blog_posts = [
-        [
-            "title" => "Ray Kulon man",
-            "slug" => "judul-post-pertama",
-            "author" => "Ray Pratidina",
-            "body" => "Seorang anak muda perantau dari ujung jawabarat, datang ke bandung untuk menimba ilmu pengalaman dan untuk meraih cita-cita nya meskipun binguung cita-cita nya ingin menjadi apa.
-            tapi walau bingung dan masih dalam mencari jati diri pemuda ini tidak akan menyerah karena itu lah jalan ninja nya"
-        ],
-        [
-            "title" => "Farhan the maxim man",
-            "slug" => "judul-post-kedua",
-            "author" => "Farhan abas",
-            "body" => "Seorang anak muda dengan julukan Maxim man yang meluanagkan waktu senggang nya dengan menjadi driver Maxim. Berbekal pengalaman mengendarai motor sejauh 1000KM dengan tidak pernah kecelakaan.
-            dia berjuang demi menambah uang saku untuk me modif motor yang lebih proper dan masuk cricle Vario "
-        ]
-    ]; 
-$new_post= [];
-foreach($blog_posts as $post) {
-    if($post["slug"] === $slug) {
-        $new_post = $post;
+Route::get('post/{slug}', [PostController::class, 'show']);
 
-    }
-}
 
-    return view('post', [
-        "title" => "single post",
-        "post" => $new_post
-    ]);
-});
 
 
 
