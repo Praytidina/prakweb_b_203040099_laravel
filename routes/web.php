@@ -40,7 +40,8 @@ Route::get(' /posts', [PostController::class, 'index']);
 
 ///singlepost
 
-Route::get('post/{slug}', [PostController::class, 'show']);
+Route::get('post/{post:slug}', [PostController::class, 'show']);
+
 
 
 

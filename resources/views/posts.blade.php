@@ -3,15 +3,16 @@
 @extends('layouts.main')
 
 @section('container')
+<h1 class="mb-5">Halaman Blog Posts</h1>
 
-<article class="mb-5">
 
     @foreach ($posts as $post)
-        <h2>
-            <a href="/posts/{{ $post['slug'] }}">{{ $post["title"] }}</a>
-        </h2>
-        <h5>By: {{ $post["author"] }}</h5>
-        <P>{{ $post["body"] }} </p>
+    <article>
+    
+        <h2><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h2>
+       
+        <P>{{ $post->excerpt }} </p>
+</article>
         
     @endforeach
 
