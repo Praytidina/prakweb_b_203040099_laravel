@@ -9,9 +9,9 @@
     @foreach ($posts as $post)
     <article class="mb-5 border-bottom pb-4">
     
-        <h2><a href="/post/{{ $post->slug }}"class="text-decoration-none">{{ $post->title }}</a></h2>
+        <h2><a href="/post/{{ $post->slug }" class="text-decoration-none">{{ $post->title }}</a></h2>
 
-        <p>By. <a href="/authors/{{ $post->author->username }}" class="text-decoration-none"></a> {{ $post->author->username   }} <a href="/categories/{{ $post->category->slug }}"class="text-decoration-none"> {{ $post->category->username}}</a></p>
+        <p>By. <a href="/authors/{{ $post->author->username }}" class="text-decoration-none"></a> {{ $post->author->username }} <a href="/categories/{{ $post->category->slug }}"class="text-decoration-none"> {{ $post->category->username}}</a></p>
         
        
         <P>{{ $post->excerpt }} </p>
