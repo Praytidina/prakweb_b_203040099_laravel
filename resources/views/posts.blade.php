@@ -50,28 +50,25 @@
   <div class="row">
     @foreach ($posts->skip(1) as $post)
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-4 mb-4">
     <div class="card">
       
-      <div class="position-absolute  px-3 py-2 text-white" style="background-color: rgb(0, 0, 0, 0.7)"><a href="/posts?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a> </div>
+      <div class="position-absolute  px-3 py-2 rounded text-white" style="background-color: rgb(0, 0, 0, 0.7)"><a href="/posts?category={{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a> </div>
   <img src="https://source.unsplash.com/500x400/?{{ $post->category->name }}"class="card-img-top" alt="{{ $post->category->name }}">
   <div class="card-body">
     <h5 class="card-title">{{ $post->title }}</h5>
 
     <p>
-    <small class="text-muted">
+    <small>
       By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $post->author->username }}
       {{ $post->created_at->diffForHumans() }}
-
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago
     </small>
     </p>
     
     <p class="card-text">{{ $post->excerpt }}</p>
     <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read more...</a>
-  </div>   
-</div>
-
+        </div>   
+      </div>
     </div>
     @endforeach
   </div>
