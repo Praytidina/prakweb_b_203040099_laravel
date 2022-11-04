@@ -32,14 +32,10 @@
     <h3 class="card-title"><a href="post/{{ $posts[0]->slug }}" class="text-decoration-none-dark">{{ $posts[0]->title }}</h3>
     
     <p>
-    <small class="text-muted">By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none"></a> {{ $posts[0]->author->username }} <a href="posts?/category/{{ $posts[0]->category->slug }}" class="text-decoration-none"> {{ $posts[0]->category->username}}</a> {{ $posts[0]->created_at->diffForHumans() }}
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago
-    </small>
-    </p>
-
-
+    <small> By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in <a href="posts?/category/{{ $posts[0]->category->slug }}" class="text-decoration-none"> {{ $posts[0]->category->name}}</a> {{ $posts[0]->created_at->diffForHumans() }}
+  </small>
+  </p>
     <p class="card-text">{{ $posts[0]->excerpt }}</p>
-
     <a href="/post/{{ $posts[0]->slug }}" class="text-decoration-none btn-primary">Read more</a>
 
   </div>
