@@ -31,8 +31,6 @@
       <input type="email" name="email" class="form-control @error('email') 
       is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
       <label for="email">Email address</label>
-    </div>
-    <label for="email">Email</label>
       @error('email')
       <div class="invalid-feedback">
         {{ $message }}
@@ -49,7 +47,7 @@
     @enderror
     </div>
 
-    <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
+    <button class="w-100 btn btn-lg btn-success mt-3" type="submit">Register</button>
 
   </form>
   <small class="d-block text-center mt-3">All ready registed?? <a href="/login">Login</small>
